@@ -1,0 +1,181 @@
+
+	body{
+		font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+		}
+
+table{
+		padding: 0;
+		margin: 0;
+        border-collapse: separate;
+        border-spacing: 0;
+		border: 0.5px black;
+		font-size: 0.9em;
+		color: #000;
+        background: #ffff;
+        overflow:auto;
+		}
+td{
+		border: 1px solid black;
+		padding: 10px;
+        text-align: left;
+        position: relative;
+        }
+        
+th {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 75px; 
+        background: white;
+        border-bottom: 5px solid black; 
+        border-top: 5px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        text-align: center;
+        padding: 10px;
+        background: lightgrey;
+        color: black;
+        z-index: 999;
+        font-size: 1.0em;
+    }
+
+
+.menu-closed-logo {
+    vertical-align: top;
+    float: right;
+    }
+.domaindesc{
+    border-top-width: 5px;
+    border-top-color: rgb(0, 0, 0)
+    }
+.text-center{
+    text-align: center;
+    }
+.text-left{
+    text-align: left;
+    }
+.font-icon-large{
+    font-size: 50px;
+    }
+.max{
+        max-width: 100%;
+    width:100%;
+    }
+.box-pad{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+.update-element{
+    color: crimson;
+}
+.text-border{
+    border: 2px solid black;
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+}
+.benchmark-button{
+    margin-top: 10px;
+    height: 20px;
+    font-size: 15px;
+    padding: 5px;
+}
+@media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+  
+    table caption {
+      font-size: 1.3em;
+    }
+    
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+      position: relative;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+      position: relative;
+    }
+    
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+
+.benchmark{
+    margin-top: 20px;
+}
+
+
+.appropriate{
+  background-color: rgb(240, 240, 240);
+  color: #fbb819;
+  border-color: #a0a1a1;
+  transition-duration: 0.4s;
+}
+.appropriate:hover {
+  background-color: rgb(211, 209, 209);
+  color: #fbb819;
+}
+.frequency{
+  background-color: rgb(240, 240, 240);
+  color: #df3d5e;
+  border-color: #a0a1a1;
+  transition-duration: 0.4s;
+}
+.frequency:hover {
+  background-color: rgb(196, 194, 194);
+  color: #df3d5e;
+
+}
+.variety{
+  background-color: rgb(240, 240, 240);
+  color: #8a6e91;
+  border-color: #a0a1a1;
+  transition-duration: 0.4s;
+}
+.variety:hover {
+  background-color: rgb(196, 194, 194);
+  color: #8a6e91;
+
+}
+.general{
+  background-color: rgb(240, 240, 240);
+  color: #3ca9a1;
+  border-color: #a0a1a1;
+  transition-duration: 0.4s;
+}
+.general:hover {
+  background-color: rgb(196, 194, 194);
+  color: #3ca9a1;
+
+}
