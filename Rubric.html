@@ -1,18 +1,53 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Online Skills Clinic Rubric</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-html5-1.6.1/b-print-1.6.1/r-2.2.3/sc-2.0.1/datatables.min.css"/>
-		<link rel="stylesheet" href="Static/site.css">
-		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-	</head>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSC Rubric</title>
+    <link rel="stylesheet" href="https://cdn.ef.design/libs/web-ui/latest/css/bundle.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-html5-1.6.1/b-print-1.6.1/r-2.2.3/sc-2.0.1/datatables.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css" integrity="sha256-b88RdwbRJEzRx95nCuuva+hO5ExvXXnpX+78h8DjyOE=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js" integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Static/site.css">
+<style>
+    label {
+        color: black;
+    }
+    .dataTables_info {
+        color: black;
+    }
+</style>
+</head>
 <body>
+
+    <header class="ef-header -condensed sticky-top" data-activate="ef-header" data-type="condensed">
+        <div class="ef-header__main">
+            <div class="ef-container ef-header__group -standalone">
+                <div class="ef-header__item ef-header__product">
+                    <a href="{% url 'Landing_Page' %}"><img class="ef-header__logo -white" src="Static/assets/EF-Teach-Online-Logo black transparent.png"></a>
+                  </div>
+                <button class="ef-header__menu-toggle ef-nav__toggle">
+                    <svg class="ef-icon ef-header__icon -animated -animated-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <g class="line1"><rect class="rect1" y="9" width="32" height="3" rx="1" ry="1"/></g>
+                        <g class="line2"><rect class="rect2" y="20" width="32" height="3" rx="1" ry="1"/></g>
+                    </svg>
+                </button>
+                <div class="ef-header__group -nav">
+                    <nav class="ef-nav ef-header__item">
+                        <ul class="ef-nav__menu">
+                            <li class="ef-nav__item"><a class="ef-nav__link" data-toggle="modal" data-target="#updates" style="cursor: pointer;">Updates</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
     <div class="modal fade" id="updates" tabindex="-1" role="dialog" aria-labelledby="updatestitle" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="dialog">
             <div class="modal-content">
@@ -23,8 +58,16 @@
                     </button>
                 </div>
                 <div class="modal-body" style="overflow-y: auto;">
-                    No Updates Yet
-                    <!-- modal body -->
+                    <p>Note: Updates to element wording/scoring guides will be in <span class="update-element">red</span><br><hr></p>
+                    <u>2020-04-24</u>
+                    <ul>
+                        <li><span class="update-element">Classroom Tools:</span> Adding timing and variety components, and removed the requirement of coloured notepod notes</li>
+                        <li><span class="update-element">Positive Learning Environment:</span> Descriptors are delineated by counts of indiciators</li>
+                        <li><span class="update-element">Teaching Strategies:</span> Descriptors are delineated by counts of indicators</li>
+                        <li><span class="update-element">Praise:</span> Added indicator - reward system - and provided an explanation of a variety of praise</li>
+                        <li><span class="update-element">Language Explanation:</span> Added indicator - concept checking questions </li>
+                        <li><span class="update-element">Instruction Giving:</span> Changed indicator - instruction checking questions </li>
+                    </ul>
                 </div> 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -32,701 +75,888 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="flag" tabindex="-1" role="dialog" aria-labelledby="flagtitle" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="flagtitle">Immediate Intervention Cases</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        Immediate intervention might not always be obvious, but please use your best judgement. Generally,
-                        anything that is either inappropriate between a teacher and a student OR any external variable that
-                        significantly impedes learning should be classified as immediate intervention. Some examples (though
-                        not exhaustive) can include:
-                        <br><br>
-                        <Strong>Environment:</Strong>
-                        <ul>
-                            <li>Unprofessional online environment</li>
-                            <li>Teacher laying down</li>
-                            <li>Posters in the background with non-child-friendly content</li>
-                            <li>Constant movement of the camera</li>
-                            <li>Messy background containing lots of boxes, books, clutter, etc.</li>
-                            <li>unprofessional clothing (e.g., strapless top, no clothing, inappropriate images or wording
-                                displayed)</li>
-                        </ul>
-                        <Strong>Behavior:</Strong>
-                        <ul>
-                            <li>Teacher eating or drinking</li>
-                            <li>Rude behavior</li>
-                            <li>Using curse words</li>
-                            <li>Yawning excessively</li>
-                            <li>Scolding / raising their voice at the student or parent</li>
-                            <li>Lewd behavior or images</li>
-                        </ul>
-                        If you're unsure whether behavior that you have observed should be flagged, feel free to ask for
-                        assistance from Teach Online QA or more experienced mentors in the Team's channel.
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" >
-        <div class="navbar-brand">
-            <img class="menu-closed-logo" alt="EF Education First" src="https://www.ef.com/sitecore/__/~/media/universal/logo/global-header/2018/white/00.svg" height = "50" width = "70">
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse py-0" id="navbarNavDropdown">
-            <ul class="navbar-nav py-0">
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#updates" style="cursor: pointer;">
-                        Updates
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#flag" style="cursor: pointer;">
-                        Immediate Intervention
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
     <div class="jumbotron" style="background-color: #efefef;">
-        <div class="row">
-            <div class="col-sm-2"> </div>
-            <div class="col-sm-8 text-center" style="color: black; margin-top: 60px;">
-                <h1>Online Skills Clinic Observation Rubric</h1>
-                <br>
-                <h3>Click on the buttons below to learn more about the components of the rubric</h3>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-12 text-center" style="margin: 10px;">
-                        <h4>Scoring guides:</h4>
-                    </div>
-                    <div class="col-sm-3">
-                        <button style="width: 100%;" type="button" class="btn btn-lg frequency margin-pad"
-                            data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top"
-                            title="Frequency" data-content="Self-explanatory">Frequency</button>
-                    </div>
-                    <div class="col-sm-3">
-                        <button style="width: 100%;" type="button" class="btn btn-lg variety margin-pad"
-                            data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top"
-                            title="Variety" data-content="Self-explanatory">Variety</button>
-                    </div>
-                    <div class="col-sm-3">
-                        <button style="width: 100%;" type="button" class="btn btn-lg appropriate margin-pad"
-                            data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top"
-                            title="Appropriate"
-                            data-content="These are not written to be exhaustive, but give some examples of what appropriate/inappropriate practice might look like.">Appropriate</button>
-                    </div>
-                    <div class="col-sm-3">
-                        <button style="width: 100%;" type="button" class="btn btn-lg general margin-pad"
-                            data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top"
-                            title="General"
-                            data-content="These are general comments or explanations surrounding certain concepts/indicators or elements">General</button>
-                    </div>
-    
-    
-                    
-                </div>
-                <hr>
-    
-            </div>
-            <div class="col-sm-2">
-            </div>
-            <div class="col-sm-12">
-                <table id="table_rubric" class='rubrictable table-hover' style="margin: 1.75rem auto;">
-                    <thead>
-                        <tr>
-                            <th>Domain</th>
-                            <th>Element</th>
-                            <th>Indicator</th>
-                            <th>Needs Improvement</th>
-                            <th>Developing</th>
-                            <th>Meets Expectations</th>
-                            <th>Exceeds Expectations</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style='text-align: center; border-bottom: 1px white;'>Engagement</td>
-                            <td class='text-center'></td>
-                            <td class='text-center'></td>
-                            <td class='text-center'>Little effort to encourage student engagement and participation is
-                                evident as a consequence of some combination of the following:</td>
-                            <td class='text-center''>
-                                <button type="button" class="btn btn-sm frequency" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" title="Uneven and Inconsistent" data-content="A mixture of successful/unsuccessful practice">Uneven and inconsistent</button> effort to encourage student engagement and participation is evident as a consequence of some combination of the following:
-                            </td>
-                            <td class=' text-center'>
-                                <button type="button" class="btn btn-sm frequency" data-container="body"
-                                    data-toggle="popover" data-trigger="focus" data-placement="top" title="Frequent"
-                                    data-content="More than half of the observation">Frequent</button> effort to encourage
-                                student engagement and participation is evident as a consequence of some combination of the
-                                following:
-                            </td>
-                            <td class='text-center'>
-                                <button type="button" class="btn btn-sm frequency" data-container="body"
-                                    data-toggle="popover" data-trigger="focus" data-placement="top" title="Consistent"
-                                    data-content="Throughout the entire observation">Consistent</button> efforts to
-                                encourage student engagement and participation is evident as a consequence of some
-                                combination of the following:
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style='text-align: center; border-bottom: 1px white; border-top: 1px white'></td>
-                            <td class="text-center">Building Rapport</td>
-                            <td class="text-left">
-                                <ul type="disk">
-                                    <li>Greeting / Closure</li>
-                                    <li>English Name use</li>
-                                    <li>Active listening</li>
-                                    <li>Use of personal information (e.g. student and teacher learning habits) </li>
-                                    <li>Interest in the student (Academic/Personal)</li>
-                                    <li>Makes connections (self, student, lesson content)</li>
-                                </ul>
-                            </td>
-                            <td class="text-center">
-                                The teacher makes <button type="button" class="btn btn-sm frequency" data-container="body"
-                                    data-toggle="popover" data-trigger="focus" data-placement="top" title="Little to no"
-                                    data-content="Less than 20% of the observation">little to no</button>
-                                attempt to build a connection, or fails to include an
-                                <button type="button" class="btn btn-sm appropriate" data-container="body"
-                                    data-toggle="popover" data-trigger="focus" data-placement="top"
-                                    title="Inappropriate Introduction"
-                                    data-content="Failing to mention ones name/ask for the student&rsquo;s name, asking unecessary questions or perhaps beginning to teach ">(appropriate)
-                                    introduction</button>,
-                                <button type="button" class="btn btn-sm appropriate" data-container="body"
-                                    data-toggle="popover" data-trigger="focus" data-placement="top"
-                                    title="Inappropriate Closure"
-                                    data-content="Rushed closure with no final engaging component with the student">closure</button>,
-                                or name use
-                            </td>
-                            <td class="text-center">The teacher makes
-                                <button type="button" class="btn btn-sm frequency" data-container="body"
-                                    data-toggle="popover" data-trigger="focus" data-placement="top" title="Some"
-                                    data-content="Less than half of the observation">some</button>
-                                attempt to build a connection and display some attentiveness to the student&rsquo;s
-                                interests and personality
-                                <br>
-                            </td>
-                            <td class="text-center">The teacher
-                                <button type="button" class="btn btn-sm frequency" data-container="body"
-                                    data-toggle="popover" data-trigger="focus" data-placement="top" title="Frequently"
-                                    data-content="More than half of the observation">frequently</button>
-                                attempts to build a connection with an
-                                <button type="button" class="btn btn-sm appropriate" data-container="body"
-                                    data-toggle="popover" data-trigger="focus" data-placement="top"
-                                    title="Appropriate Introduction"
-                                    data-content="Introduces themself, asks for name/how are you etc. Sets the stage for the lesson">appropriate
-                                    introduction</button>
-                                or <button type="button" class="btn btn-sm appropriate" data-trigger="focus"
-                                    data-container="body" data-toggle="popover" data-placement="top"
-                                    title="Appropriate Closure"
-                                    data-content="Thanks the student/Wraps up the lesson">closure</button>
-                                , and demonstrates attentiveness toward the student&rsquo;s interest and personality
-                            </td>
-                            <td class="text-center">The teacher
-                                <button type="button" class="btn btn-sm frequency" data-container="body"
-                                    data-toggle="popover" data-trigger="focus" data-placement="top" title="Consistently"
-                                    data-content="Through the entire observation">consistently</button>
-                                attempts to establish and maintain a personal connection with the student throughout the
-                                lesson, implements an
-                                <button type="button" class="btn btn-sm appropriate" data-container="body"
-                                    data-toggle="popover" data-trigger="focus" data-placement="top"
-                                    title="Appropriate Introduction/Closure"
-                                    data-content="See Needs Improvement/Meets Expectations">appropriate
-                                    closure/introduction</button>, and makes use of personal information to facilitate a
-                                connection with the student
-                                <br>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class='domaindesc text-center' style='text-align: center; border-bottom: 1px white;'>Learning
-                            </td>
-                            <td class='domaindesc text-center'></td>
-                            <td class='domaindesc text-center'></td>
-                            <td class='domaindesc text-center'>Opportunities for student learning are impeded as a consequence
-                                of some combination of the following:</td>
-                            <td class='domaindesc text-center'>Some opportunities to engage in effective learning is evident as
-                                a consequence of some combination of the following:</td>
-                            <td class='domaindesc text-center'>The student has a broad range of opportunities to engage in
-                                effective and successful learning as a consequence of some combination of the following:</td>
-                            <td class='domaindesc text-center'>Students are provided with opportunities to extend beyond their
-                                existing knowledge, as evident through a combination of the following.</td>
-                        </tr>
-                        <tr>
-                            <td style='text-align: center; border-bottom: 1px white; border-top: 1px white'></td>
-                            <td class="text-center"><span class=forexplanation>
-                                <button type="button" class="btn btn-sm general" data-trigger="focus" data-container="body"
-                                    data-toggle="popover" data-placement="top" title="Correction and Feedback Guide"
-                                    data-content="Score the number of corrections/feedback provided in proportion to the number of major errors made by the student.
-                                                  In cases where no correction is required, we would ask you to assess this element in light of the teachers performance in praise. What positive feedback was provided? What comments were made akin to feedback?">Correction
-                                    and Feedback</button>
-                            </td>
-                            <td>
-                                <ul type="disk">
-                                    <li>Specific/focused</li>
-                                    <li>Timing (immediate/ delayed)</li>
-                                    <li>Self-correction</li>
-                                    <li>Written feedback</li>
-                                </ul>
-                            </td>
-                            <td class="text-center">There is
-                                <button type="button" class="btn btn-sm frequency" data-trigger="focus"
-                                    data-container="body" data-toggle="popover" data-placement="top" title="Little to no"
-                                    data-content="Less than 20% of major errors made">little to no</button>
-                                corrective feedback given for major errors
-                            </td>
-                            <td class="text-center">Provides
-                                <button type="button" class="btn btn-sm frequency" data-trigger="focus"
-                                    data-container="body" data-toggle="popover" data-placement="top" title="Some"
-                                    data-content="Less than half of the observation">some</button>
-                                corrective feedback with
-                                <button type="button" class="btn btn-sm variety" data-trigger="focus" data-container="body"
-                                    data-toggle="popover" data-placement="top" title="Little variety"
-                                    data-content="Two or fewer techniques observed">little variety</button>
-                                OR ineffective techniques are used to provide corrective feedback
-                            </td>
-                            <td class="CellWithComment text-center">Demonstrates an awareness of when to provide <button type="button" class="btn btn-sm appropriate" data-trigger="focus"
-                                data-container="body" data-toggle="popover" data-placement="top"
-                                title="Appropriate Corrective Feedback"
-                                data-content="Feedback upon student actions/mistakes that concern the lesson aims and content. Inappropriate Corrective Feedback: Provides feedback on student success/ provides misleading feedback/ provides incorrect feedback">appropriate</button>
-                                corrective feedback, provides accurate corrections
-                                and provides summative feedback on learning strategies
-                            </td>
-                            <td class="CellWithComment text-center">Encourages and facilitates self-correction and 
-                                <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                    data-toggle="popover" data-placement="top" title="Consistently"
-                                    data-content="Throughout the entire
-                                    observation"> consistently</button>
-                                    utilizes a range of correction techniques to extend learning both accurately and
-                                     <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriate"
-                                data-content="See 'Meets Expectations'">appropriately</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style='text-align: center;border-bottom: 1px white; border-top: 1px white'></td>
-                            <td class="text-center">Teaching Strategies</td>
-                            <td>
-                                <ul type="disk">
-                                    <li>Beginner Basics Learning Strategies</li>
-                                    <li>Repetition</li>
-                                    <li>Elicitation</li>
-                                    <li>Modeling</li>
-                                    <li>Transcending</li>
-                                    <li>Extending</li>
-                                    <li>Think Time</li>
-                                    <li>Questioning</li>
-                                </ul>
-                            </td>
-                            <td class="text-center">Uses <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Little to no"
-                                data-content="Less than 20% of the
-                                observation">little to no</button> teaching
-                                strategies
-                            </td>
-                            <td class="text-center">Uses <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Some"
-                                data-content="Less than half of the observation">some</button> teaching
-                                strategies, or the strategies used are 
-                                <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Inappropriate Strategy"
-                                data-content="Use of
-                                instruction/content/activities includes words which are beyond the student&rsquo;s level, or
-                                is delivered in an unaccomodating manner such as speed.n">not appropriate</button> to
-                                the lesson and student
-                            </td>
-                            <td class="text-center">Makes <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Frequent"
-                                data-content="More than half of the
-                                observation">frequent</button> use of
-                                strategies and the strategies are <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Almost always"
-                                data-content="More than half of the
-                                observation">almost always</button> 
-                                <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriate"
-                                data-content="Delivery of content/instruction/activity is understood by the student with little confusion,
-                                or is slightly challenging/accomodating based upon level">appropriate</button> to the lesson and student
-                            </td>
-                            <td class=" text-center"><button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Consistent"
-                                data-content="Throughout the entire
-                                observation">Consistent</button> use of
-                                strategies that are <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Always"
-                                data-content="Throughout the entire
-                                observation">always</button> <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriate"
-                                data-content="See 'Meets Expectations'">appropriate</button> 
-                            </td>
-        
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style='text-align: center;border-top: 1px white'></td>
-                            <td class="text-center">Student Production</td>
-                            <td>
-                                <ul type="disk">
-                                    <li>Prompt full-sentences</li>
-                                    <li>Balance of TTT vs STT</li>
-                                    <li>Follow-up / language extension questions</li>
-                                </ul>
-                            </td>
-                            <td class="text-center">Makes <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Little to no"
-                                data-content="Less than 20% of the
-                                observation">little to no</button> effort
-                                to facilitate student production
-                            </td>
-                            <td class="text-center">Demonstrates <button type="button" class="btn btn-sm frequency" data-trigger="focus"
-                                data-container="body" data-toggle="popover" data-placement="top" title="Some"
-                                data-content="Less than half of the observation">some</button> effort
-                                to facilitate student production to the <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriate Level"
-                                data-content="Delivery of
-                                content/instruction/activity is understood by the student with little confusion, or is
-                                slightly challenging/accomodating based upon level">appropriate level</button>
-                            </td>
-                            <td class="text-center">Makes <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Frequent"
-                                data-content="More than half of the
-                                observation">frequent</button> effort to
-                                facilitate student production using a range of techniques to the <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriate Level"
-                                data-content="See 'Developing'">appropriate level</button>
-                            </td>
-                            <td class="text-center">Teacher <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Consistently"
-                                data-content="Throughout the entire
-                                observation">consistently</button>
-                                facilitates student production using a range of techniques, and makes efforts to extend,
-                                transcend, or reinforce where appropriate
-                            </td>
-                        </tr>
-                        <tr>
-                          <td style='text-align: center;border-top: 1px white'></td>
-                          <td class="text-center">Checking Understanding</td>
-                          <td>
+      <div class="row">
+          <div class="col-sm-2"> </div>
+          <div class="col-sm-8 text-center" style="color: black; margin-top: 60px;">
+              <h1>Online Skills Clinic Observation Rubric</h1>
+              <br>
+              <h3>Click on the buttons below to learn more about the components of the rubric</h3>
+              <hr>
+              <div class="row">
+                  <div class="col-sm-12 text-center" style="margin: 10px;">
+                      <h4>Scoring guides:</h4>
+                  </div>
+                  <div class="col-sm-3">
+                      <button style="width: 100%;" type="button" class="btn btn-lg frequency margin-pad"
+                          data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top"
+                          title="Frequency" data-content="Self-explanatory">Frequency</button>
+                  </div>
+                  <div class="col-sm-3">
+                      <button style="width: 100%;" type="button" class="btn btn-lg variety margin-pad"
+                          data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top"
+                          title="Variety" data-content="Self-explanatory">Variety</button>
+                  </div>
+                  <div class="col-sm-3">
+                      <button style="width: 100%;" type="button" class="btn btn-lg appropriate margin-pad"
+                          data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top"
+                          title="Appropriate"
+                          data-content="These are not written to be exhaustive, but give some examples of what appropriate/inappropriate practice might look like.">Appropriate</button>
+                  </div>
+                  <div class="col-sm-3">
+                      <button style="width: 100%;" type="button" class="btn btn-lg general margin-pad"
+                          data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top"
+                          title="General"
+                          data-content="These are general comments or explanations surrounding certain concepts/indicators or elements">General</button>
+                  </div>
+  
+  
+                  <div class="col-sm-12 text-center" style="margin: 10px;">
+                      <h4>Pre-scored video:</h4>
+                  </div>
+                  <div class="col-sm-4">
+                      <button style="width: 100%;" type="button" class="btn btn-lg btn-primary margin-pad"
+                          data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top"
+                          title="Benchmark"
+                          data-content="A clear-cut example of one teaching component at one performance level">Benchmark
+                          <i style="color: black;" class="fa fa-video"></i></button>
+                  </div>
+                  <div class="col-sm-4">
+                      <button style="width: 100%;" type="button" class="btn btn-lg btn-warning margin-pad"
+                          data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top"
+                          title="Rangefinder"
+                          data-content="An example of teaching at the low or high end of a performance level. Rangefinder clips are useful to better distinguish between scoring bands in those instances where evidence is not neatly captured in either one.">Rangefinder
+                          <i style="color: black;" class="fa fa-video"></i></button>
+                  </div>
+                  <div class="col-sm-4">
+                      <button style="width: 100%;" type="button" class="btn btn-lg btn-danger margin-pad"
+                          data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top"
+                          title="Mini-segment"
+                          data-content="A clear illustration of one concept important to recognizing relevant evidence">Mini-segment
+                          <i style="color: black;" class="fa fa-video"></i></button>
+                  </div>
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-4 text-center margin-pad">
+                      <h4>Rubric Components:</h4>
+                  </div>
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-3">
+                      <button type="button" class="btn btn-lg max margin-pad btn-secondary" data-toggle="popover" data-placement="top" data-trigger="focus"  title="Domain" data-content="Domains are the broad categories of knowledge, skills, and performance. There are four standards for teachers: Engagement; Learning; Classroom Management; and Communication.">
+                          Domain
+                      </button>
+                  </div>
+                  <div class="col-sm-3">
+                      <button type="button" class="btn btn-lg max margin-pad btn-secondary" data-toggle="popover" data-placement="top" data-trigger="focus"  title="Domain" data-content=" Elements describe specific knowledge, skills, and performance for each Domain. This is the level of rubric organization at which scores are assigned.">
+                          Element
+                      </button>
+                  </div>
+                  <div class="col-sm-3">
+                      <button type="button" class="btn btn-lg max margin-pad btn-secondary" data-toggle="popover" data-placement="top" data-trigger="focus"  title="Domain" data-content="Indicators are more specific descriptions of actions and behaviors related to each Element. The Indicators break down Elements into more specific aspects of teaching/educator practice and provide an opportunity for observers to offer detailed feedback that serves as a roadmap for improvement">
+                          Indicator
+                      </button>
+                  </div>
+                  <div class="col-sm-3">
+                      <button type="button" class="btn btn-lg max margin-pad btn-secondary" data-toggle="popover" data-placement="top" data-trigger="focus"  title="Domain" data-content="Performance descriptors are observable and measurable statements of teacher actions and behaviors aligned to each Element and serve as the basis for identifying the level of performance. These descriptors are additive - meaning conditions not included in higher descriptors are still required (where relevant)">
+                          Descriptor
+                      </button>
+                  </div>
+  
+              </div>
+              <hr>
+  
+          </div>
+          <div class="col-sm-2">
+          </div>
+          <div class="col-sm-12">
+              <table id="table_rubric" class='rubrictableopen table-hover' style="margin: 1.75rem auto;">
+                  <thead>
+                      <tr>
+                          <th>Domain</th>
+                          <th>Element</th>
+                          <th>Indicator</th>
+                          <th>Needs Improvement</th>
+                          <th>Developing</th>
+                          <th>Meets Expectations</th>
+                          <th>Exceeds Expectations</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td style='text-align: center; border-bottom: 1px white;'>Engagement</td>
+                          <td class='text-center'></td>
+                          <td class='text-center'></td>
+                          <td class='text-center'>Little effort to encourage student engagement and participation is
+                              evident as a consequence of some combination of the following:</td>
+                          <td class='text-center''>
+                              <button type="button" class="btn btn-sm frequency" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" title="Uneven and Inconsistent" data-content="A mixture of successful/unsuccessful practice">Uneven and inconsistent</button> effort to encourage student engagement and participation is evident as a consequence of some combination of the following:
+                          </td>
+                          <td class=' text-center'>
+                              <button type="button" class="btn btn-sm frequency" data-container="body"
+                                  data-toggle="popover" data-trigger="focus" data-placement="top" title="Frequent"
+                                  data-content="More than half of the observation">Frequent</button> effort to encourage
+                              student engagement and participation is evident as a consequence of some combination of the
+                              following:
+                          </td>
+                          <td class='text-center'>
+                              <button type="button" class="btn btn-sm frequency" data-container="body"
+                                  data-toggle="popover" data-trigger="focus" data-placement="top" title="Consistent"
+                                  data-content="Throughout the entire observation">Consistent</button> efforts to
+                              encourage student engagement and participation is evident as a consequence of some
+                              combination of the following:
+                          </td>
+                      </tr>
+                      <tr>
+                          <td style='text-align: center; border-bottom: 1px white; border-top: 1px white'></td>
+                          <td class="text-center">Building Rapport</td>
+                          <td class="text-left">
                               <ul type="disk">
-                                  <li>Indicator</li>
-                                  <li>Indicator</li>
-                                  <li>Indicator</li>
+                                  <li>Greeting / Closure</li>
+                                  <li>English Name use</li>
+                                  <li>
+                                    <button type="button" class="btn btn-sm general" data-container="body"
+                                    data-toggle="popover" data-trigger="focus" data-placement="top" title="Active Listening"
+                                    data-content="Observable signs of active listening, as opposed to merely hearing what is being said, are: remembering, clarification, positive reinforcement, and questioning.">Active Listening</button>    
+                                  </li>
+                                  <li>Use of personal information (e.g. student and teacher learning habits) </li>
+                                  <li>Interest in the student (Academic/Personal)</li>
+                                  <li>Makes connections (self, student, lesson content)</li>
                               </ul>
                           </td>
                           <td class="text-center">
+                              The teacher makes <button type="button" class="btn btn-sm frequency" data-container="body"
+                                  data-toggle="popover" data-trigger="focus" data-placement="top" title="Little to no"
+                                  data-content="Less than 20% of the observation">little to no</button>
+                              attempt to build a connection, or fails to include an
+                              <button type="button" class="btn btn-sm appropriate" data-container="body"
+                                  data-toggle="popover" data-trigger="focus" data-placement="top"
+                                  title="Inappropriate Introduction"
+                                  data-content="Failing to mention ones name/ask for the student&rsquo;s name, asking unecessary questions or perhaps beginning to teach ">(appropriate)
+                                  introduction</button>,
+                              <button type="button" class="btn btn-sm appropriate" data-container="body"
+                                  data-toggle="popover" data-trigger="focus" data-placement="top"
+                                  title="Inappropriate Closure"
+                                  data-content="Rushed closure with no final engaging component with the student">closure</button>,
+                              or name use
                           </td>
-                          <td class="text-center">
-                              
+                          <td class="text-center">The teacher makes
+                              <button type="button" class="btn btn-sm frequency" data-container="body"
+                                  data-toggle="popover" data-trigger="focus" data-placement="top" title="Some"
+                                  data-content="Less than half of the observation">some</button>
+                              attempt to build a connection and display some attentiveness to the student&rsquo;s
+                              interests and personality
+                              <br>
                           </td>
-                          <td class="text-center">
+                          <td class="text-center">The teacher
+                              <button type="button" class="btn btn-sm frequency" data-container="body"
+                                  data-toggle="popover" data-trigger="focus" data-placement="top" title="Frequently"
+                                  data-content="More than half of the observation">frequently</button>
+                              attempts to build a connection with an
+                              <button type="button" class="btn btn-sm appropriate" data-container="body"
+                                  data-toggle="popover" data-trigger="focus" data-placement="top"
+                                  title="Appropriate Introduction"
+                                  data-content="Introduces themself, asks for name/how are you etc. Sets the stage for the lesson">appropriate
+                                  introduction</button>
+                              or <button type="button" class="btn btn-sm appropriate" data-trigger="focus"
+                                  data-container="body" data-toggle="popover" data-placement="top"
+                                  title="Appropriate Closure"
+                                  data-content="Thanks the student/Wraps up the lesson">closure</button>
+                              , and demonstrates attentiveness toward the student&rsquo;s interest and personality
                           </td>
-                          <td class="text-center">
+                          <td class="text-center">The teacher
+                              <button type="button" class="btn btn-sm frequency" data-container="body"
+                                  data-toggle="popover" data-trigger="focus" data-placement="top" title="Consistently"
+                                  data-content="Through the entire observation">consistently</button>
+                              attempts to establish and maintain a personal connection with the student throughout the
+                              lesson, implements an
+                              <button type="button" class="btn btn-sm appropriate" data-container="body"
+                                  data-toggle="popover" data-trigger="focus" data-placement="top"
+                                  title="Appropriate Introduction/Closure"
+                                  data-content="See Needs Improvement/Meets Expectations">appropriate
+                                  closure/introduction</button>, and makes use of personal information to facilitate a
+                              connection with the student
+                              <br>
                           </td>
                       </tr>
-                        <tr>
-                            <td class='domaindesc' style='text-align: center;border-bottom: 1px white'>Classroom Management</td>
-                            <td class='domaindesc text-center'></td>
-                            <td class='domaindesc text-center'></td>
-                            <td class='domaindesc text-center'>Ineffective use of online environment impedes learning, through
-                                some combination of the following:</td>
-                            <td class='domaindesc text-center'>Use of online environment is not an impediment to learning but
-                                does not enhance it, through some combination of the following:</td>
-                            <td class='domaindesc text-center'>The online environment functions smoothly and efficiently,
-                                through some combination of the following:</td>
-                            <td class='domaindesc text-center'>The online environment functions seamlessly and facilitates
-                                practices within other domains through some combination of the following:</td>
-                        </tr>
-                        <tr>
-                            <td style='text-align: center;border-bottom: 1px white; border-top: 1px white'></td>
-                            <td class="text-center">Online Environment</td>
-                            <td class="">
-                                <ul type="disk">
-                                    <li>Presentable, professional dress</li>
-                                    <li>Plain, non-distracting, background</li>
-                                    <li>
-                                        <button type="button" class="btn btn-sm appropriate" data-trigger="focus"
-                                            data-container="body" data-toggle="popover" data-placement="top"
-                                            title="Appropriate location"
-                                            data-content="Appropriate location: Teaching location is quiet, undistracting, and befitting of a professional environment. Inappropriate Location: Teaching is undertaken from a bed/outisde/car/ or other location which is unprofessional">Appropriate
-                                            location</button>
-                                    </li>
-                                    <li>Clear lighting</li>
-                                    <li>Camera-ready</li>
-                                    <li>Center position in video</li>
-                                </ul>
-                            </td>
-                            <td class="text-center">No effort evident in at least one or more indicators OR there is noticeable
-                                room for improvement in more than two indicators</td>
-                            <td class="text-center">Efforts appear to have been made, but there is still room for improvement in
-                                one or two indicators</td>
-                            <td class="text-center">All indicators of online environment are met</td>
-                            <td class="text-center">All indicators of online environment are met, and additional care and
-                                attention to detail is evident</td>
-                        </tr>
-                        <tr>
-                            <td style='text-align: center; border-top: 1px white; border-bottom: 1px white'></td>
-                            <td class="text-center">Staging and Timing</td>
-                            <td>
-                                <ul type="disk">
-                                    <li>Pacing / Timing</li>
-                                    <li>Verbal transitions</li>
-                                    <li>Lesson flow (smooth vs. rushed, skipping)</li>
-                                    <li>Change slides to correct activity</li>
-                                </ul>
-                            </td>
-                            <td class="text-center">The teacher ineffectually navigates the lesson with <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Inappropriate Lesson Pace"
-                                data-content="Pace is inappropriate
-                                when it is rushed or unecessarily slow.">inappropriate lesson pace</button>, transitions, and lesson flow
-                            </td>
-                            <td class="text-center">The teacher navigates the lesson using inconsistent and uneven lesson
-                                pace/transitions/lesson flow</td>
-                            <td class="text-center">The teacher navigates the lesson with a <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Frequent"
-                                data-content="More than half of the
-                                observation">frequently</button> 
-                                    <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriate Lesson Pace"
-                                data-content="Lesson pace is appropriate
-                                when it takes into account the nature of the content, importance of the material, and does
-                                so in conjunction to the observed student success/difficulties.">appropriate</button> lesson pace, transitions and lesson flow
-                                <span class="CellCommentFR"><strong>Frequent:</strong> More than half of the observation</span>
-                            </td>
-                            <td class="text-center">The teacher maximizes lesson time and utilizes effective
-                                verbal transitions between slides. The lesson flow is <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Consistently"
-                                data-content="Throughout the entire
-                                observation">consistently</button>
-                                <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriate Lesson Pace"
-                                data-content="See 'Meets Expectations'">appropriate</button> based upon observed student difficulties
-                            </td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class='domaindesc' style='text-align: center;border-bottom: 1px white;'>Communication</td>
-                            <td class='domaindesc text-center'></td>
-                            <td class='domaindesc text-center'></td>
-                            <td class='domaindesc text-center'>Communication is inaccurate, unclear and unsuitable to the
-                                student level, through some combination of the following:</td>
-                            <td class='domaindesc text-center'>Communication is
-                                <button type="button" class="btn btn-sm frequency" data-trigger="focus"
-                                    data-container="body" data-toggle="popover" data-placement="top" title="Sometimes"
-                                    data-content="Less than half of the observation">sometimes</button>
-                                accurate/clear/ appropriate to the student level, through some combination of the following:
-                            </td>
-                            <td class='domaindesc text-center'>Communication is
-                                <button type="button" class="btn btn-sm frequency" data-trigger="focus"
-                                    data-container="body" data-toggle="popover" data-placement="top" title="Frequent"
-                                    data-content="More than half of the observation">frequent</button>
-                                accurate/clear/ appropriate to the student level, through some combination of the following:
-                            </td>
-                            <td class='domaindesc text-center'>
-                                Communication is
-                                <button type="button" class="btn btn-sm frequency" data-trigger="focus"
-                                    data-container="body" data-toggle="popover" data-placement="top" title="Consistent"
-                                    data-content="Through the entire observation">consistent</button>
-                                accurate/clear/ appropriate to the student level, through some combination of the following:
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style='text-align: center;border-bottom: 1px white; border-top: 1px white'></td>
-                            <td class="text-center">Instruction Giving and Explanations</td>
-                            <td>
-                                <ul type="disk">
-                                    <li>Clear and concise</li>
-                                    <li>Repeat/rephrase/simplify instructions</li>
-                                    <li>Knowledge of activities</li>
-                                    <li>Knowledge of product features (confidence / self-evaluation)</li>
-                                    <li>Knowledge of language</li>
-                                    <li>Accuracy and clarity</li>
-                                    <li>Concept / instruction checking questions</li>
-                                </ul>
-                            </td>
-                            <td class="text-center"><button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Frequent"
-                                data-content="More than two instances of explanation/instruction lacking sufficient clarity">frequently</button> unclear
-                                explanation or instructions, and/or instructions are off-task and evidently fail to capture the
-                                demands of the lesson plan
-                            </td>
-                            <td class="text-center"><button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Some"
-                                data-content="One to two instances of
-                                explanation/instruction lacking sufficient clarity">Some</button> instances of unclear
-                                explanation or instructions, and conduct of activity does not always accurately correspond to
-                                the lesson plan
-                            </td>
-                            <td class="text-center">Instructions and explanations are <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Frequent"
-                                data-content="More than half of the
-                                observation">frequently</button> clear, accurate, within the boundaries of the lesson
-                                plan and are <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Frequent"
-                                data-content="More than half of the
-                                observation">frequently</button> accurate and suitable for the student
-                            </td>
-                            <td class="text-center">Instructions and explanations are <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Consistently"
-                                data-content="Throughout the entire
-                                observation">consistently</button> given in a clear and accurate manner to support
-                                student success and are <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriately Tailored"
-                                data-content="Delivery of
-                                content/instruction/activity is understood by the student with little confusion, or is
-                                slightly challenging/accomodating based upon level">appropriately</button> tailored to the student's
-                                    level
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style='text-align: center;border-top:1px white; border-bottom: 1px white'></td>
-                            <td class="text-center">Teacher Output</td>
-                            <td>
-                                <ul type="disk">
-                                    <li>Speaking speed</li>
-                                    <li>Word choice</li>
-                                    <li>Pronunciation</li>
-                                    <li>Grading of language</li>
-                                    <li>Accuracy</li>
-                                    <li>Learner Awareness</li>
-                                </ul>
-                            </td>
-                            <td class="text-center">There is <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Little to no"
-                                data-content="Less than 20% of the
-                                observation">little to no</button>
-                                <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriate Teacher Output"
-                                data-content="Delivery of
-                                content/instruction/activity is understood by the student with little confusion, or is
-                                slightly challenging/accomodating based upon level.">appropriate</button> teacher output and/or teacher output is 
-                                <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Inappropriate Teacher Output"
-                                data-content="Use of instruction/content/activities
-                                includes words which are beyond the student&rsquo;s level, or is delivered in an
-                                unaccomodating manner such as speed.">inappropriately</button> graded to the student level and/or the output
-                                is not connected to target language
-                            </td>
-                            <td class="text-center">There are 
-                                <button type="button" class="btn btn-sm frequency" data-trigger="focus"
-                                    data-container="body" data-toggle="popover" data-placement="top" title="Some"
-                                    data-content="Less than half of the observation">some</button> instances
-                                of <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriate Teacher Output"
-                                data-content="See 'Needs Improvement'">appropriately</button> graded language, connected to target language
-                            </td>
-                            <td class="text-center">Teacher output is <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Frequent"
-                                data-content="More than half of the
-                                observation">frequently</button> accurate and appropriate for the student, and
-                                connected to target language
-                            </td>
-                            <td class="text-center">Teacher output is <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Consistently"
-                                data-content="Throughout the entire
-                                observation">consistently</button> <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriate Teacher Output"
-                                data-content="See 'Needs Improvement'">appropriate</button> for the
-                                    student and connected to target language
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style='text-align: center;border-top: 1px white'></td>
-                            <td class="text-center">Bilingual Awareness</td>
-                            <td>
-                                <ul type="disk">
-                                    <strong>English</strong>
-                                    <li>To deliver lesson content</li>
-                                    <strong>Chinese</strong>
-                                    <li>To explain difficult concepts</li>
-                                    <li>When student progres is impeded</li>
-                                    <ii>When prompted by the student</ii>
-        
-                                </ul>
-                            </td>
-                            <td class="text-center">Demonstrates <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Little to no"
-                                data-content="Less than 20% of the
-                                observation">little to no</button>
-                                <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriate use of Chinese"
-                                data-content="See indicators for
-                                circumstances">appropriate</button> use of Chinese vs. English
-                            </td>
-                            <td class="text-center">Demonstrates <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                      <tr>
+                        <td style='text-align: center; border-bottom: 1px white; border-top: 1px white'></td>
+                        <td class="text-center">Positive Learning Environment</td>
+                        <td>
+                            <ul type="disk">
+                                <li>Attentive</li>
+                                <li>Patient</li>
+                                <li>Smiling</li>
+                                <li>Encouraging</li>
+                                <li>Tone of voice</li>
+                                <li>Energy level</li>
+                                <li>Maintain student focus</li>
+                                <li>Active</li>
+                            </ul>
+                        </td>
+                        <td class="text-center">There are
+                            <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top" title="Little to no"
+                                data-content="Less than 20% of the observation">little to no</button>
+                            attempts by the teacher to create a positive learning environment and/or uses
+                            <button type="button" class="btn btn-sm variety" data-trigger="focus" data-container="body"
+                                data-toggle="popover" data-placement="top" title="No variety"
+                                data-content="Only one indicator is observed">no variety</button> of techniques
+                        </td>
+                        <td class="text-center">There are
+                            <button type="button" class="btn btn-sm frequency" data-trigger="focus"
                                 data-container="body" data-toggle="popover" data-placement="top" title="Some"
                                 data-content="Less than half of the observation">some</button>
-                                instances of <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriate use of Chinese"
-                                data-content="See indicators for
-                                circumstances">appropriate</button> use of Chinese vs. English
-                            </td>
-                            <td class="text-center">Use of Chinese vs. English is <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Frequent"
-                                data-content="More than half of the
-                                observation">frequently</button> <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriate use of Chinese"
-                                data-content="See indicators for
-                                circumstances">appropriate</button> for the
-                                student
-                            </td>
-                            <td class="text-center">Use of Chinese vs. English is <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Consistently"
-                                data-content="Throughout the entire
-                                observation">consistently</button> <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
-                                data-toggle="popover" data-placement="top" title="Appropriate use of Chinese"
-                                data-content="See indicators for
-                                circumstances">appropriate</button> for
-                                the student
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/b-1.6.1/b-html5-1.6.1/sc-2.0.1/datatables.min.css" />
-    
-    <script type="text/javascript"
-        src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/b-1.6.1/b-html5-1.6.1/sc-2.0.1/datatables.min.js"></script>
+                            attempts by the teacher to create a positive learning environment and/or there is
+                            <button type="button" class="btn btn-sm variety" data-trigger="focus" data-container="body"
+                                data-toggle="popover" data-placement="top" title="Little variety"
+                                data-content="No more than two or three indicators are observed">no variety</button> in
+                            the techniques used
+                        </td>
+                        <td class="text-center">There are
+                            <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top" title="Frequent"
+                                data-content="More than half of the observation">frequent</button>
+                            attempts by the teacher to create a positive learning environment throughout the class,
+                            using
+                            <button type="button" class="btn btn-sm variety" data-trigger="focus" data-container="body"
+                                data-toggle="popover" data-placement="top" title="Some variety"
+                                data-content="Four or more indicators are observed">some variety</button>
+                            of techniques that encourages student participation and motivation in the lesson
+                        </td>
+                        <td class="text-center">The positive learning environment is
+                            <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top" title="Consistent"
+                                data-content="Through the entire observation">consistent</button>
+                            throughout the observation, encompasses a
+                            <button type="button" class="btn btn-sm variety" data-trigger="focus" data-container="body"
+                                data-toggle="popover" data-placement="top" title="Variety of Techniques"
+                                data-content="Five or more indicators are observed">variety
+                                of techniques</button>
+                            , appears authentic, and attempts to motivate and encourage the student&rsquo;s engagement
+                            and learning
+                        </td>
+                    </tr>
+                      <tr>
+                        <td style='text-align: center; border-top: 1px white'></td>
+                        <td class="text-center">Praise</td>
+                        <td>
+                            <ul type="disk">
+                                <li>General</li>
+                                <li>Specific</li>
+                            </ul>
+                        </td>
+                        <td class="text-center">There is <button type="button" class="btn btn-sm frequency" data-container="body"
+                            data-toggle="popover" data-trigger="focus" data-placement="top"
+                            title="Little to no"
+                            data-content="Less than 20% of the observation">little to no</button>
+                            attempt to praise/reward the student for achievements in the lesson
+                        </td>
+                        <td class="text-center">The teacher gives
+                            <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top" title="Some"
+                                data-content="Less than half of the observation">some</button>
+                            and/or
+                            <button type="button" class="btn btn-sm appropriate" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top"
+                                title="Inappropriate praise/reward"
+                                data-content="Praise/Reward is given when student makes mistakes with target language/ given without verbal reinforcement">inappropriate</button>
+                            praise/reward
+                        </td>
+                        <td class="text-center">Teacher <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                            data-container="body" data-toggle="popover" data-placement="top" title="Frequently"
+                            data-content="More than half of the observation">frequently</button>
+                            praises/rewards the student for achievements in the lesson using both general and specific praise
+                        </td>
+                        <td class="text-center">The Teacher
+                            <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top" title="Consistently"
+                                data-content="Through the entire observation">consistently</button>
+                            and
+                            <button type="button" class="btn btn-sm appropriate" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top"
+                                title="Appropriate praise/reward"
+                                data-content="Praise is given when student success is observed">appropriately</button>
+                            praises/rewards the student for achievements in the lesson using both general and specific
+                            praise
+                        </td>
+                    </tr>
+                      <tr>
+                          <td class='domaindesc text-center' style='text-align: center; border-bottom: 1px white;'>Learning
+                          </td>
+                          <td class='domaindesc text-center'></td>
+                          <td class='domaindesc text-center'></td>
+                          <td class='domaindesc text-center'>Opportunities for student learning are impeded as a consequence
+                              of some combination of the following:</td>
+                          <td class='domaindesc text-center'>Some opportunities to engage in effective learning is evident as
+                              a consequence of some combination of the following:</td>
+                          <td class='domaindesc text-center'>The student has a broad range of opportunities to engage in
+                              effective and successful learning as a consequence of some combination of the following:</td>
+                          <td class='domaindesc text-center'>Students are provided with opportunities to extend beyond their
+                              existing knowledge, as evident through a combination of the following.</td>
+                      </tr>
+                      <tr>
+                          <td style='text-align: center; border-bottom: 1px white; border-top: 1px white'></td>
+                          <td class="text-center"><span class=forexplanation>
+                              <button type="button" class="btn btn-sm general" data-trigger="focus" data-container="body"
+                                  data-toggle="popover" data-placement="top" title="Correction and Feedback Guide"
+                                  data-content="Score the number of corrections/feedback provided in proportion to the number of major errors made by the student.
+                                                In cases where no correction is required, we would ask you to assess this element in light of the teachers performance in praise. What positive feedback was provided? What comments were made akin to feedback?">Correction
+                                  and Feedback</button>
+                          </td>
+                          <td>
+                              <ul type="disk">
+                                  <li>Specific/focused</li>
+                                  <li>Timing (immediate/ delayed)</li>
+                                  <li>Self-correction</li>
+                                  <li>Written feedback</li>
+                              </ul>
+                          </td>
+                          <td class="text-center">There is
+                              <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                  data-container="body" data-toggle="popover" data-placement="top" title="Little to no"
+                                  data-content="Less than 20% of major errors made">little to no</button>
+                              corrective feedback given for major errors
+                          </td>
+                          <td class="text-center">Provides
+                              <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                  data-container="body" data-toggle="popover" data-placement="top" title="Some"
+                                  data-content="Less than half of the observation">some</button>
+                              corrective feedback with
+                              <button type="button" class="btn btn-sm variety" data-trigger="focus" data-container="body"
+                                  data-toggle="popover" data-placement="top" title="Little variety"
+                                  data-content="Two or fewer techniques observed">little variety</button>
+                              OR ineffective techniques are used to provide corrective feedback
+                          </td>
+                          <td class="CellWithComment text-center">Demonstrates an awareness of when to provide <button type="button" class="btn btn-sm appropriate" data-trigger="focus"
+                              data-container="body" data-toggle="popover" data-placement="top"
+                              title="Appropriate Corrective Feedback"
+                              data-content="Feedback upon student actions/mistakes that concern the lesson aims and content. Inappropriate Corrective Feedback: Provides feedback on student success/ provides misleading feedback/ provides incorrect feedback">appropriate</button>
+                              corrective feedback, provides accurate corrections
+                              and provides summative feedback on learning strategies
+                          </td>
+                          <td class="CellWithComment text-center">Encourages and facilitates self-correction and 
+                              <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                                  data-toggle="popover" data-placement="top" title="Consistently"
+                                  data-content="Throughout the entire
+                                  observation"> consistently</button>
+                                  utilizes a range of correction techniques to extend learning both accurately and
+                                   <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Appropriate"
+                              data-content="See 'Meets Expectations'">appropriately</button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td style='text-align: center;border-bottom: 1px white; border-top: 1px white'></td>
+                          <td class="text-center">Teaching Strategies</td>
+                          <td>
+                            <ul type="disk">
+                                <li>
+                                    <button type="button" class="btn btn-sm general" data-trigger="focus"
+                                        data-container="body" data-toggle="popover" data-placement="top"
+                                        title="Repetition"
+                                        data-content="Repetition is the act of saying something more than once to aid in student understanding and/or progress.">Repetition</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-sm general" data-trigger="focus"
+                                        data-container="body" data-toggle="popover" data-placement="top"
+                                        title="Elicitation"
+                                        data-content="The act of asking something that requires a student response in the first instance before providing any kind of feedback/answer.">Elicitation</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-sm general" data-trigger="focus"
+                                        data-container="body" data-toggle="popover" data-placement="top"
+                                        title="Modelling"
+                                        data-content="The teacher demonstrates a new concept/instruction/activity that the student is required to carry out. This can also include modelling new sounds, single words or even combinations of words up to full sentences.">Modelling</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-sm general" data-trigger="focus"
+                                        data-container="body" data-toggle="popover" data-placement="top"
+                                        title="Transcending"
+                                        data-content="The teacher goes beyond the content of the lesson to ensure student understanding. This could include giving extra examples to explain concepts.">Transcending</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-sm general" data-trigger="focus"
+                                        data-container="body" data-toggle="popover" data-placement="top"
+                                        title="Extending"
+                                        data-content="The teacher extends the content, when appropriate to both the student’s level and time constraints. This could include using additional prompts or questions to build on the student’s existing knowledge.">Extending</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-sm general" data-trigger="focus"
+                                        data-container="body" data-toggle="popover" data-placement="top"
+                                        title="Think Time"
+                                        data-content="Students are afforded time to self-generate responses. Sufficiency of the time provided is dependent upon student level and lesson context.">Think Time</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-sm general" data-trigger="focus"
+                                        data-container="body" data-toggle="popover" data-placement="top"
+                                        title="Questioning"
+                                        data-content="Questions are asked of the student in order that they can incorporate new information/concepts with what they have already learned.">Questioning</button>
+                                </li>
+                                <li>Simplification</li>
+                            </ul>
+                          </td>
+                          <td class="text-center">At most uses one teaching strategy and/or strategies are
+                            <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top" title="Almost always"
+                                data-content="70-80% of strategies are inappropriately used">almost always</button>
+                            <button type="button" class="btn btn-sm appropriate" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top" title="Inappropriate"
+                                data-content="See explanation in 'Developing'">inappropriate</button>
+                            to the lesson/student
+                        </td>
+                        <td class="text-center">Uses
+                            <button type="button" class="btn btn-sm variety" data-trigger="focus" data-container="body"
+                                data-toggle="popover" data-placement="top" title="Little Variety"
+                                data-content="At least two teaching strategies are observed (see indicators)">little
+                                variety</button>
+                            of teaching strategies, or the strategies used are
+                            <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top" title="Sometimes"
+                                data-content="Around half of all strategies are inappropriate used">sometimes</button>
+                            <button type="button" class="btn btn-sm appropriate" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top"
+                                title="Inappropriate Strategy"
+                                data-content="Use of strategies is not relevant to the activity or content, observed student difficulties, or is delivered in an unaccommodating manner such as speed.">inappropriate</button>
+                            to the lesson and/or student
+                        </td>
+                        <td class="text-center">Uses
+                            <button type="button" class="btn btn-sm variety" data-trigger="focus" data-container="body"
+                                data-toggle="popover" data-placement="top" title="Some Variety"
+                                data-content="Uses four different teaching strategies (see indicators)">some
+                                variety</button>
+                            of strategies and the strategies are
+                            <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top" title="Almost always"
+                                data-content="70-80% of strategies are appropriately used">almost always</button>
+                            <button type="button" class="btn btn-sm appropriate" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top"
+                                title="Appropriate Strategy"
+                                data-content="Delivery of teaching strategy is relevant to the activity or content, beneficial to the student, or is slightly challenging/accommodating based upon level">appropriate
+                                strategy</button>
+                            to the lesson and student
+                        </td>
+                        <td class="text-center">Uses a
+                            <button type="button" class="btn btn-sm variety" data-trigger="focus" data-container="body"
+                                data-toggle="popover" data-placement="top" title="Variety"
+                                data-content="Uses five different teaching strategies (see indicators)">variety</button>
+                            of strategies that are
+                            <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top" title="Always"
+                                data-content="All strategies are appropriately used">always</button>
+                            <button type="button" class="btn btn-sm appropriate" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top"
+                                title="Appropriate Strategy"
+                                data-content="See explanation in 'Meets Expectations'">appropriate</button>
+                            to the lesson and student
+                        </td>
+                      </tr>
+                      <tr>
+                          <td style='text-align: center;border-top: 1px white'></td>
+                          <td class="text-center">Student Production</td>
+                          <td>
+                              <ul type="disk">
+                                  <li>Prompt full-sentences</li>
+                                  <li>Balance of TTT vs STT</li>
+                                  <li>Follow-up / language extension questions</li>
+                              </ul>
+                          </td>
+                          <td class="text-center">Makes <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Little to no"
+                              data-content="Less than 20% of the
+                              observation">little to no</button> effort
+                              to facilitate student production
+                          </td>
+                          <td class="text-center">Demonstrates <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                              data-container="body" data-toggle="popover" data-placement="top" title="Some"
+                              data-content="Less than half of the observation">some</button> effort
+                              to facilitate student production to the <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Appropriate Level"
+                              data-content="Delivery of
+                              content/instruction/activity is understood by the student with little confusion, or is
+                              slightly challenging/accomodating based upon level">appropriate level</button>
+                          </td>
+                          <td class="text-center">Makes <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Frequent"
+                              data-content="More than half of the
+                              observation">frequent</button> effort to
+                              facilitate student production using a range of techniques to the <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Appropriate Level"
+                              data-content="See 'Developing'">appropriate level</button>
+                          </td>
+                          <td class="text-center">Teacher <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Consistently"
+                              data-content="Throughout the entire
+                              observation">consistently</button>
+                              facilitates student production using a range of techniques, and makes efforts to extend,
+                              transcend, or reinforce where appropriate
+                          </td>
+                      </tr>
+                      <tr>
+                      <tr>
+                          <td class='domaindesc' style='text-align: center;border-bottom: 1px white'>Classroom Management</td>
+                          <td class='domaindesc text-center'></td>
+                          <td class='domaindesc text-center'></td>
+                          <td class='domaindesc text-center'>Ineffective use of online environment impedes learning, through
+                              some combination of the following:</td>
+                          <td class='domaindesc text-center'>Use of online environment is not an impediment to learning but
+                              does not enhance it, through some combination of the following:</td>
+                          <td class='domaindesc text-center'>The online environment functions smoothly and efficiently,
+                              through some combination of the following:</td>
+                          <td class='domaindesc text-center'>The online environment functions seamlessly and facilitates
+                              practices within other domains through some combination of the following:</td>
+                      </tr>
+                      <tr>
+                          <td style='text-align: center;border-bottom: 1px white; border-top: 1px white'></td>
+                          <td class="text-center">Online Environment</td>
+                          <td class="">
+                              <ul type="disk">
+                                  <li>Presentable, professional dress</li>
+                                  <li>Plain, non-distracting, background</li>
+                                  <li>
+                                      <button type="button" class="btn btn-sm appropriate" data-trigger="focus"
+                                          data-container="body" data-toggle="popover" data-placement="top"
+                                          title="Appropriate location"
+                                          data-content="Appropriate location: Teaching location is quiet, undistracting, and befitting of a professional environment. Inappropriate Location: Teaching is undertaken from a bed/outisde/car/ or other location which is unprofessional">Appropriate
+                                          location</button>
+                                  </li>
+                                  <li>Clear lighting</li>
+                                  <li>Camera-ready</li>
+                                  <li>Center position in video</li>
+                              </ul>
+                          </td>
+                          <td class="text-center">No effort evident in at least one or more indicators OR there is noticeable
+                              room for improvement in more than two indicators</td>
+                          <td class="text-center">Efforts appear to have been made, but there is still room for improvement in
+                              one or two indicators</td>
+                          <td class="text-center">All indicators of online environment are met</td>
+                          <td class="text-center">All indicators of online environment are met, and additional care and
+                              attention to detail is evident</td>
+                      </tr>
+                      <tr>
+                        <td style='text-align: center;border-bottom: 1px white; border-top: 1px white'></td>
+                        <td class="text-center">Classroom Tools</td>
+                        <td>
+                            <ul type="disk">
+                                <li>Chat pod</li>
+                                <li>Note pod</li>
+                                <li>Arrow</li>
+                                <li>Drawing Tools</li>
+                                <li>Colour in notepod notes</li>
+                            </ul>
+                        </td>
+                        <td class="text-center">There are
+                            <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top" title="Little to no"
+                                data-content="Less than 20% of the observation">little to no</button>
+                            attempts by the teacher to use classroom tools and/or only one tool use is observed
+                        </td>
+                        <td class="text-center">The teacher demonstrates
+                            <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top" title="Some"
+                                data-content="Less than half of the observation">some</button>
+                            use of classroom tools with
+                            <button type="button" class="btn btn-sm variety" data-trigger="focus" data-container="body"
+                                data-toggle="popover" data-placement="top" title="Little Variety of Tools"
+                                data-content="No more than two tools or tool uses (ways of using a tool)">little
+                                variety</button>
+                        </td>
+                        <td class="text-center">Teacher
+                            <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                data-container="body" data-toggle="popover" data-placement="top" title="Frequent"
+                                data-content="More than half of the observation">frequently</button>
+                            uses a
+                            <button type="button" class="btn btn-sm variety" data-trigger="focus" data-container="body"
+                                data-toggle="popover" data-placement="top" title="Variety of Tools"
+                                data-content="More than two tools or tool uses (ways of using a tool)">variety</button>
+                            of classroom tools, including the notepod
+                        </td>
+                        <td class="text-center">Teacher is able to use classroom tools to encourage success in other
+                            domains (Learning/Engagement/Communication)
+                        </td>
+                    </tr>
+                      <tr>
+                          <td style='text-align: center; border-top: 1px white; border-bottom: 1px white'></td>
+                          <td class="text-center">Staging and Timing</td>
+                          <td>
+                              <ul type="disk">
+                                  <li>Pacing / Timing</li>
+                                  <li>Verbal transitions</li>
+                                  <li>Lesson flow (smooth vs. rushed, skipping)</li>
+                                  <li>Change slides to correct activity</li>
+                              </ul>
+                          </td>
+                          <td class="text-center">The teacher ineffectually navigates the lesson with <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Inappropriate Lesson Pace"
+                              data-content="Pace is inappropriate
+                              when it is rushed or unecessarily slow.">inappropriate lesson pace</button>, transitions, and lesson flow
+                          </td>
+                          <td class="text-center">The teacher navigates the lesson using inconsistent and uneven lesson
+                              pace/transitions/lesson flow</td>
+                          <td class="text-center">The teacher navigates the lesson with a <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Frequent"
+                              data-content="More than half of the
+                              observation">frequently</button> 
+                                  <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Appropriate Lesson Pace"
+                              data-content="Lesson pace is appropriate
+                              when it takes into account the nature of the content, importance of the material, and does
+                              so in conjunction to the observed student success/difficulties.">appropriate</button> lesson pace, transitions and lesson flow
+                              <span class="CellCommentFR"><strong>Frequent:</strong> More than half of the observation</span>
+                          </td>
+                          <td class="text-center">The teacher maximizes lesson time and utilizes effective
+                              verbal transitions between slides. The lesson flow is <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Consistently"
+                              data-content="Throughout the entire
+                              observation">consistently</button>
+                              <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Appropriate Lesson Pace"
+                              data-content="See 'Meets Expectations'">appropriate</button> based upon observed student difficulties
+                          </td>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class='domaindesc' style='text-align: center;border-bottom: 1px white;'>Communication</td>
+                          <td class='domaindesc text-center'></td>
+                          <td class='domaindesc text-center'></td>
+                          <td class='domaindesc text-center'>Communication is inaccurate, unclear and unsuitable to the
+                              student level, through some combination of the following:</td>
+                          <td class='domaindesc text-center'>Communication is
+                              <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                  data-container="body" data-toggle="popover" data-placement="top" title="Sometimes"
+                                  data-content="Less than half of the observation">sometimes</button>
+                              accurate/clear/ appropriate to the student level, through some combination of the following:
+                          </td>
+                          <td class='domaindesc text-center'>Communication is
+                              <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                  data-container="body" data-toggle="popover" data-placement="top" title="Frequent"
+                                  data-content="More than half of the observation">frequent</button>
+                              accurate/clear/ appropriate to the student level, through some combination of the following:
+                          </td>
+                          <td class='domaindesc text-center'>
+                              Communication is
+                              <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                  data-container="body" data-toggle="popover" data-placement="top" title="Consistent"
+                                  data-content="Through the entire observation">consistent</button>
+                              accurate/clear/ appropriate to the student level, through some combination of the following:
+                          </td>
+                      </tr>
+                      <tr>
+                          <td style='text-align: center;border-bottom: 1px white; border-top: 1px white'></td>
+                          <td class="text-center">Instruction Giving</td>
+                          <td>
+                              <ul type="disk">
+                                  <li>Clear and concise</li>
+                                  <li>Repeat/rephrase/simplify instructions</li>
+                                  <li>Knowledge of activities</li>
+                                  <li>Knowledge of product features (confidence / self-evaluation)</li>
+                                  <li>Accuracy and clarity</li>
+                                  <li>Instruction checking questions</li>
+                              </ul>
+                          </td>
+                          <td class="text-center"><button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Frequent"
+                              data-content="More than two instances of explanation/instruction lacking sufficient clarity">Frequently</button> unclear
+                              instructions, and/or instructions are off-task and evidently fail to capture the
+                              demands of the lesson plan
+                          </td>
+                          <td class="text-center"><button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Some"
+                              data-content="One to two instances of
+                              explanation/instruction lacking sufficient clarity">Some</button> instances of unclear
+                              explanation or instructions, and conduct of activity does not always accurately correspond to
+                              the lesson plan
+                          </td>
+                          <td class="text-center">Instructions and explanations are <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Frequent"
+                              data-content="More than half of the
+                              observation">frequently</button> clear, accurate, within the boundaries of the lesson
+                              plan and are <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Frequent"
+                              data-content="More than half of the
+                              observation">frequently</button> accurate and suitable for the student
+                          </td>
+                          <td class="text-center">Instructions and explanations are <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Consistently"
+                              data-content="Throughout the entire
+                              observation">consistently</button> given in a clear and accurate manner to support
+                              student success and are <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Appropriately Tailored"
+                              data-content="Delivery of
+                              content/instruction/activity is understood by the student with little confusion, or is
+                              slightly challenging/accomodating based upon level">appropriately</button> tailored to the student's
+                                  level
+                          </td>
+                      </tr>
+                      <tr>
+                        <td style='text-align: center;border-bottom: 1px white; border-top: 1px white'></td>
+                        <td class="text-center"><button type="button" class="btn btn-sm general" data-trigger="focus" data-container="body"
+                            data-toggle="popover" data-placement="top" title="Language Explanations Guidance"
+                            data-content="Frequency of language explanations should be assessed in reference to the number of areas where language explanations were required, either as part of the lesson content, or in response to observed student difficulties. ">Language Explanations</button></td>
+                        <td>
+                            <ul type="disk">
+                                <li>Knowledge of language</li>
+                                <li>Accuracy and Clarity</li>
+                                <li>Concept checking questions</li>
+                            </ul>
+                        </td>
+                        <td class="text-center">The <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                            data-toggle="popover" data-placement="top" title="Majority"
+                            data-content="More than half of explanations given">majority</button>
+                         of language explanations are unclear or incoherent.
+                        </td>
+                        <td class="text-center">Explanations of language are <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                            data-toggle="popover" data-placement="top" title="Sometimes"
+                            data-content="Less than half of explanations given">sometimes</button> unclear or incoherent.
+                        </td>
+                        <td class="text-center">Explanations of language are <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                            data-toggle="popover" data-placement="top" title="Frequently"
+                            data-content="At least 80% of explanations given">frequently</button> clear and coherent, with few exceptions. The teacher may provide explanations through direct verbal or written delivery.
+                        </td>
+                        <td class="text-center">Explanations of language are <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                            data-toggle="popover" data-placement="top" title="Consistently"
+                            data-content="All explanations given">consistently</button> clear and coherent, and also delivered in as direct and efficient manner as possible.
+                        </td>
+                    </tr>
+                      <tr>
+                          <td style='text-align: center;border-top:1px white; border-bottom: 1px white'></td>
+                          <td class="text-center">Teacher Output</td>
+                          <td>
+                              <ul type="disk">
+                                  <li>Speaking speed</li>
+                                  <li>Word choice</li>
+                                  <li>Pronunciation</li>
+                                  <li>Grading of language</li>
+                                  <li>Accuracy</li>
+                                  <li>Learner Awareness</li>
+                              </ul>
+                          </td>
+                          <td class="text-center">There is <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Little to no"
+                              data-content="Less than 20% of the
+                              observation">little to no</button>
+                              <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Appropriate Teacher Output"
+                              data-content="Delivery of
+                              content/instruction/activity is understood by the student with little confusion, or is
+                              slightly challenging/accomodating based upon level.">appropriate</button> teacher output and/or teacher output is 
+                              <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Inappropriate Teacher Output"
+                              data-content="Use of instruction/content/activities
+                              includes words which are beyond the student&rsquo;s level, or is delivered in an
+                              unaccomodating manner such as speed.">inappropriately</button> graded to the student level and/or the output
+                              is not connected to target language
+                          </td>
+                          <td class="text-center">There are 
+                              <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                                  data-container="body" data-toggle="popover" data-placement="top" title="Some"
+                                  data-content="Less than half of the observation">some</button> instances
+                              of <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Appropriate Teacher Output"
+                              data-content="See 'Needs Improvement'">appropriately</button> graded language, connected to target language
+                          </td>
+                          <td class="text-center">Teacher output is <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Frequent"
+                              data-content="More than half of the
+                              observation">frequently</button> accurate and appropriate for the student, and
+                              connected to target language
+                          </td>
+                          <td class="text-center">Teacher output is <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Consistently"
+                              data-content="Throughout the entire
+                              observation">consistently</button> <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Appropriate Teacher Output"
+                              data-content="See 'Needs Improvement'">appropriate</button> for the
+                                  student and connected to target language
+                          </td>
+                      </tr>
+                      <tr>
+                          <td style='text-align: center;border-top: 1px white'></td>
+                          <td class="text-center">Bilingual Awareness</td>
+                          <td>
+                              <ul type="disk">
+                                  <strong>English</strong>
+                                  <li>To deliver lesson</li>
+                                  <strong>Chinese</strong>
+                                  <li>To explain difficult concepts</li>
+                                  <li>When student progress is impeded</li>
+                                  <li>When prompted by the student</li>
+      
+                              </ul>
+                          </td>
+                          <td class="text-center">Demonstrates <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Little to no"
+                              data-content="Less than 20% of the
+                              observation">little to no</button>
+                              <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Appropriate use of Chinese"
+                              data-content="See indicators for
+                              circumstances">appropriate</button> use of Chinese vs. English
+                          </td>
+                          <td class="text-center">Demonstrates <button type="button" class="btn btn-sm frequency" data-trigger="focus"
+                              data-container="body" data-toggle="popover" data-placement="top" title="Some"
+                              data-content="Less than half of the observation">some</button>
+                              instances of <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Appropriate use of Chinese"
+                              data-content="See indicators for
+                              circumstances">appropriate</button> use of Chinese vs. English
+                          </td>
+                          <td class="text-center">Use of Chinese vs. English is <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Frequent"
+                              data-content="More than half of the
+                              observation">frequently</button> <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Appropriate use of Chinese"
+                              data-content="See indicators for
+                              circumstances">appropriate</button> for the
+                              student
+                          </td>
+                          <td class="text-center">Use of Chinese vs. English is <button type="button" class="btn btn-sm frequency" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Consistently"
+                              data-content="Throughout the entire
+                              observation">consistently</button> <button type="button" class="btn btn-sm appropriate" data-trigger="focus" data-container="body"
+                              data-toggle="popover" data-placement="top" title="Appropriate use of Chinese"
+                              data-content="See indicators for
+                              circumstances">appropriate</button> for
+                              the student
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
 
-        <script>
-            $(document).ready( function () {
-              $('#table_rubric').DataTable({
-                  "ordering":false,
-                  "paging":false,
-                 dom: 'B<"clear">lfrtip',
-                 buttons: [
-                ],
-              });
-        
-            });
-        
-          </script>
-          <script>
-            $(function () {
-                $('[data-toggle="popover"]').popover()
-            })
-        </script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-html5-1.6.1/b-print-1.6.1/r-2.2.3/sc-2.0.1/datatables.min.js"></script>
-  
+<link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/b-1.6.1/b-html5-1.6.1/sc-2.0.1/datatables.min.css" />
 
-</body>
+<script type="text/javascript"
+    src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/b-1.6.1/b-html5-1.6.1/sc-2.0.1/datatables.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#table_rubric').DataTable({
+            "ordering": false,
+            "paging": false,
+            dom: 'B<"clear">lfrtip',
+            buttons: [
+            ],
+        });
+
+    });
+
+</script>
+<script>
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+</script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+crossorigin="anonymous"></script>
 </body>
 </html>

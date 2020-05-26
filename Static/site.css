@@ -3,42 +3,42 @@
 		font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
 		}
 
-table{
-		padding: 0;
-		margin: 0;
-        border-collapse: separate;
-        border-spacing: 0;
-		border: 0.5px black;
-		font-size: 0.9em;
-		color: #000;
-        background: #ffff;
-        overflow:auto;
-		}
-td{
-		border: 1px solid black;
-		padding: 10px;
-        text-align: left;
-        position: relative;
-        }
-        
-th {
-        position: sticky;
-        position: -webkit-sticky;
-        top: 75px; 
-        background: white;
-        border-bottom: 5px solid black; 
-        border-top: 5px solid black;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
-        text-align: center;
-        padding: 10px;
-        background: lightgrey;
-        color: black;
-        z-index: 999;
-        font-size: 1.0em;
-    }
-
-
+    .rubrictableopen{
+      padding: 0;
+      margin: 0;
+          border-collapse: separate;
+          border-spacing: 0;
+      border: 0.5px black;
+      font-size: 0.9em;
+      color: #000;
+          background: #ffff;
+          overflow:auto;
+      }
+      .rubrictableopen	td{
+      border: 1px solid black;
+      padding: 10px;
+          text-align: left;
+          position: relative;
+          }
+          
+      .rubrictableopen th {
+          position: sticky;
+          position: -webkit-sticky;
+          top: 80px; 
+          background: white;
+          border-bottom: 5px solid black; 
+          border-top: 5px solid black;
+          border-left: 1px solid black;
+          border-right: 1px solid black;
+          text-align: center;
+          padding: 10px;
+          background: lightgrey;
+          color: black;
+          z-index: 400;
+          font-size: 1.0em;
+      }
+    
+    
 .menu-closed-logo {
     vertical-align: top;
     float: right;
